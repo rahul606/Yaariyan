@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yaariyan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4Y-6y-eoD">
+                                <rect key="frame" x="20" y="227" width="560" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="3eT-M2-ZkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="65"/>
+                                <color key="textColor" red="0.98431372549999996" green="0.75294117650000003" blue="0.16862745100000001" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.71372549019607845" green="0.75686274509803919" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="c4Y-6y-eoD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Pdn-rv-Yjd"/>
+                            <constraint firstItem="c4Y-6y-eoD" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="TVS-FM-qRu"/>
+                            <constraint firstItem="c4Y-6y-eoD" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="YB4-oa-5eo"/>
+                            <constraint firstItem="c4Y-6y-eoD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uTl-DL-QF2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>

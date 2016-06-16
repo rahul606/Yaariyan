@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		501246271D0D8B6B00AD2457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246261D0D8B6B00AD2457 /* AppDelegate.swift */; };
+		501246291D0D8B6B00AD2457 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246281D0D8B6B00AD2457 /* MainViewController.swift */; };
+		5012462C1D0D8B6B00AD2457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5012462A1D0D8B6B00AD2457 /* Main.storyboard */; };
+		5012462E1D0D8B6B00AD2457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5012462D1D0D8B6B00AD2457 /* Assets.xcassets */; };
+		501246311D0D8B6B00AD2457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5012462F1D0D8B6B00AD2457 /* LaunchScreen.storyboard */; };
+		5012463D1D0D932800AD2457 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012463A1D0D932800AD2457 /* CircleMenu.swift */; };
+		5012463E1D0D932800AD2457 /* CircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012463B1D0D932800AD2457 /* CircleMenuButton.swift */; };
+		5012463F1D0D932800AD2457 /* CircleMenuLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012463C1D0D932800AD2457 /* CircleMenuLoader.swift */; };
+		501246431D0D93CB00AD2457 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246411D0D93CB00AD2457 /* CustomInteractionController.swift */; };
+		501246441D0D93CB00AD2457 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246421D0D93CB00AD2457 /* CustomNavigationAnimationController.swift */; };
+		501246471D0D948900AD2457 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246461D0D948900AD2457 /* Reachability.swift */; };
+		501246491D0D99E400AD2457 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501246481D0D99E400AD2457 /* SystemConfiguration.framework */; };
+		5012464C1D0D9B8700AD2457 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5012464B1D0D9B8700AD2457 /* UIKit.framework */; };
+		5012464E1D0D9F3200AD2457 /* RadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012464D1D0D9F3200AD2457 /* RadioViewController.swift */; };
+		501246511D0D9F6A00AD2457 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246501D0D9F6A00AD2457 /* RadioPlayer.swift */; };
+		501246531D0DA00600AD2457 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501246521D0DA00600AD2457 /* MediaPlayer.framework */; };
+		501246551D0DA02300AD2457 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501246541D0DA02300AD2457 /* AVFoundation.framework */; };
+		501246581D0DC58400AD2457 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246571D0DC58400AD2457 /* SweetAlert.swift */; };
+		5012465A1D0E029200AD2457 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501246591D0E029200AD2457 /* MovieViewController.swift */; };
+		50151A561D11F81D00690A51 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A551D11F81D00690A51 /* MovieTableViewController.swift */; };
+		50151A581D11FA9E00690A51 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A571D11FA9E00690A51 /* MovieTableViewCell.swift */; };
+		50151A5B1D1205C900690A51 /* TipInCellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A5A1D1205C900690A51 /* TipInCellAnimator.swift */; };
+		50151A5D1D120ADA00690A51 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A5C1D120ADA00690A51 /* YoutubeViewController.swift */; };
+		50151A641D12A69100690A51 /* ClearCookiesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A631D12A69100690A51 /* ClearCookiesCache.swift */; };
+		50151A661D130E1A00690A51 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A651D130E1A00690A51 /* ReviewViewController.swift */; };
+		50151A691D13120100690A51 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A681D13120100690A51 /* Gif.swift */; };
+		50151A6B1D13120C00690A51 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50151A6A1D13120C00690A51 /* loading.gif */; };
+		50151A701D13347A00690A51 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6D1D13347A00690A51 /* DraggableCardView.swift */; };
+		50151A711D13347A00690A51 /* KolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6E1D13347A00690A51 /* KolodaView.swift */; };
+		50151A721D13347A00690A51 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6F1D13347A00690A51 /* OverlayView.swift */; };
+		50151A741D13348F00690A51 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50151A731D13348F00690A51 /* OverlayView.xib */; };
+		50151A771D13353400690A51 /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A751D13353400690A51 /* CustomKoladaView.swift */; };
+		50151A781D13353400690A51 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A761D13353400690A51 /* CustomOverlayView.swift */; };
+		50151A7A1D1336B500690A51 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A791D1336B500690A51 /* BoxOfficeViewController.swift */; };
+		50151A7E1D1338D200690A51 /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */; };
+		50151A7F1D1338D200690A51 /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */; };
+		C6C30572A095577627121FA2 /* libPods-Yaariyan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B981AF1E2F0B20E25D6E616 /* libPods-Yaariyan.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16F37B01A0E24077A4533EC4 /* Pods-Yaariyan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yaariyan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yaariyan/Pods-Yaariyan.release.xcconfig"; sourceTree = "<group>"; };
+		2B981AF1E2F0B20E25D6E616 /* libPods-Yaariyan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yaariyan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		501246231D0D8B6B00AD2457 /* Yaariyan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yaariyan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		501246261D0D8B6B00AD2457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		501246281D0D8B6B00AD2457 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5012462B1D0D8B6B00AD2457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5012462D1D0D8B6B00AD2457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		501246301D0D8B6B00AD2457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		501246321D0D8B6B00AD2457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5012463A1D0D932800AD2457 /* CircleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenu.swift; sourceTree = "<group>"; };
+		5012463B1D0D932800AD2457 /* CircleMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuButton.swift; sourceTree = "<group>"; };
+		5012463C1D0D932800AD2457 /* CircleMenuLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMenuLoader.swift; sourceTree = "<group>"; };
+		501246411D0D93CB00AD2457 /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
+		501246421D0D93CB00AD2457 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		501246461D0D948900AD2457 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		501246481D0D99E400AD2457 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5012464B1D0D9B8700AD2457 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5012464D1D0D9F3200AD2457 /* RadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewController.swift; sourceTree = "<group>"; };
+		501246501D0D9F6A00AD2457 /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		501246521D0DA00600AD2457 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		501246541D0DA02300AD2457 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		501246571D0DC58400AD2457 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		501246591D0E029200AD2457 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		50151A551D11F81D00690A51 /* MovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		50151A571D11FA9E00690A51 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		50151A5A1D1205C900690A51 /* TipInCellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipInCellAnimator.swift; sourceTree = "<group>"; };
+		50151A5C1D120ADA00690A51 /* YoutubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
+		50151A5E1D12A4BD00690A51 /* Yaariyan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yaariyan-Bridging-Header.h"; sourceTree = "<group>"; };
+		50151A631D12A69100690A51 /* ClearCookiesCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCookiesCache.swift; sourceTree = "<group>"; };
+		50151A651D130E1A00690A51 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		50151A681D13120100690A51 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		50151A6A1D13120C00690A51 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		50151A6D1D13347A00690A51 /* DraggableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		50151A6E1D13347A00690A51 /* KolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaView.swift; sourceTree = "<group>"; };
+		50151A6F1D13347A00690A51 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		50151A731D13348F00690A51 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		50151A751D13353400690A51 /* CustomKoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
+		50151A761D13353400690A51 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		50151A791D1336B500690A51 /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
+		50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
+		50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
+		618E8ED8FC5A885FC166051A /* Pods-Yaariyan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yaariyan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yaariyan/Pods-Yaariyan.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		501246201D0D8B6B00AD2457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501246551D0DA02300AD2457 /* AVFoundation.framework in Frameworks */,
+				501246531D0DA00600AD2457 /* MediaPlayer.framework in Frameworks */,
+				5012464C1D0D9B8700AD2457 /* UIKit.framework in Frameworks */,
+				501246491D0D99E400AD2457 /* SystemConfiguration.framework in Frameworks */,
+				C6C30572A095577627121FA2 /* libPods-Yaariyan.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5012461A1D0D8B6B00AD2457 = {
+			isa = PBXGroup;
+			children = (
+				5012464A1D0D99ED00AD2457 /* Frameworks */,
+				501246381D0D930700AD2457 /* SupportingClasses */,
+				501246251D0D8B6B00AD2457 /* Yaariyan */,
+				501246241D0D8B6B00AD2457 /* Products */,
+				FA018B26700446C14BE8DDA1 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		501246241D0D8B6B00AD2457 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				501246231D0D8B6B00AD2457 /* Yaariyan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		501246251D0D8B6B00AD2457 /* Yaariyan */ = {
+			isa = PBXGroup;
+			children = (
+				501246261D0D8B6B00AD2457 /* AppDelegate.swift */,
+				501246281D0D8B6B00AD2457 /* MainViewController.swift */,
+				5012462A1D0D8B6B00AD2457 /* Main.storyboard */,
+				5012462D1D0D8B6B00AD2457 /* Assets.xcassets */,
+				5012462F1D0D8B6B00AD2457 /* LaunchScreen.storyboard */,
+				501246321D0D8B6B00AD2457 /* Info.plist */,
+				5012464D1D0D9F3200AD2457 /* RadioViewController.swift */,
+				501246591D0E029200AD2457 /* MovieViewController.swift */,
+				50151A551D11F81D00690A51 /* MovieTableViewController.swift */,
+				50151A571D11FA9E00690A51 /* MovieTableViewCell.swift */,
+				50151A5C1D120ADA00690A51 /* YoutubeViewController.swift */,
+				50151A5E1D12A4BD00690A51 /* Yaariyan-Bridging-Header.h */,
+				50151A651D130E1A00690A51 /* ReviewViewController.swift */,
+				50151A791D1336B500690A51 /* BoxOfficeViewController.swift */,
+			);
+			path = Yaariyan;
+			sourceTree = "<group>";
+		};
+		501246381D0D930700AD2457 /* SupportingClasses */ = {
+			isa = PBXGroup;
+			children = (
+				50151A7B1D1338BF00690A51 /* DropDownAnimation */,
+				50151A6C1D13344400690A51 /* CardSwap */,
+				50151A671D1311E400690A51 /* SwiftGif */,
+				50151A621D12A68300690A51 /* ClearCookies */,
+				50151A591D1205AA00690A51 /* TipInCellAnimator */,
+				501246561D0DC57400AD2457 /* SweetAlert */,
+				5012464F1D0D9F5300AD2457 /* RadioPlayer */,
+				501246451D0D947400AD2457 /* Reachability */,
+				501246401D0D93B400AD2457 /* CustomNavigation */,
+				501246391D0D931400AD2457 /* CircularMenu */,
+			);
+			name = SupportingClasses;
+			sourceTree = "<group>";
+		};
+		501246391D0D931400AD2457 /* CircularMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5012463A1D0D932800AD2457 /* CircleMenu.swift */,
+				5012463B1D0D932800AD2457 /* CircleMenuButton.swift */,
+				5012463C1D0D932800AD2457 /* CircleMenuLoader.swift */,
+			);
+			name = CircularMenu;
+			sourceTree = "<group>";
+		};
+		501246401D0D93B400AD2457 /* CustomNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				501246411D0D93CB00AD2457 /* CustomInteractionController.swift */,
+				501246421D0D93CB00AD2457 /* CustomNavigationAnimationController.swift */,
+			);
+			name = CustomNavigation;
+			sourceTree = "<group>";
+		};
+		501246451D0D947400AD2457 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				501246461D0D948900AD2457 /* Reachability.swift */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		5012464A1D0D99ED00AD2457 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				501246541D0DA02300AD2457 /* AVFoundation.framework */,
+				501246521D0DA00600AD2457 /* MediaPlayer.framework */,
+				5012464B1D0D9B8700AD2457 /* UIKit.framework */,
+				501246481D0D99E400AD2457 /* SystemConfiguration.framework */,
+				2B981AF1E2F0B20E25D6E616 /* libPods-Yaariyan.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5012464F1D0D9F5300AD2457 /* RadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				501246501D0D9F6A00AD2457 /* RadioPlayer.swift */,
+			);
+			name = RadioPlayer;
+			sourceTree = "<group>";
+		};
+		501246561D0DC57400AD2457 /* SweetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				501246571D0DC58400AD2457 /* SweetAlert.swift */,
+			);
+			name = SweetAlert;
+			sourceTree = "<group>";
+		};
+		50151A591D1205AA00690A51 /* TipInCellAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				50151A5A1D1205C900690A51 /* TipInCellAnimator.swift */,
+			);
+			name = TipInCellAnimator;
+			sourceTree = "<group>";
+		};
+		50151A621D12A68300690A51 /* ClearCookies */ = {
+			isa = PBXGroup;
+			children = (
+				50151A631D12A69100690A51 /* ClearCookiesCache.swift */,
+			);
+			name = ClearCookies;
+			sourceTree = "<group>";
+		};
+		50151A671D1311E400690A51 /* SwiftGif */ = {
+			isa = PBXGroup;
+			children = (
+				50151A6A1D13120C00690A51 /* loading.gif */,
+				50151A681D13120100690A51 /* Gif.swift */,
+			);
+			name = SwiftGif;
+			sourceTree = "<group>";
+		};
+		50151A6C1D13344400690A51 /* CardSwap */ = {
+			isa = PBXGroup;
+			children = (
+				50151A751D13353400690A51 /* CustomKoladaView.swift */,
+				50151A761D13353400690A51 /* CustomOverlayView.swift */,
+				50151A6D1D13347A00690A51 /* DraggableCardView.swift */,
+				50151A6E1D13347A00690A51 /* KolodaView.swift */,
+				50151A6F1D13347A00690A51 /* OverlayView.swift */,
+				50151A731D13348F00690A51 /* OverlayView.xib */,
+			);
+			name = CardSwap;
+			sourceTree = "<group>";
+		};
+		50151A7B1D1338BF00690A51 /* DropDownAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */,
+				50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */,
+			);
+			name = DropDownAnimation;
+			sourceTree = "<group>";
+		};
+		FA018B26700446C14BE8DDA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				618E8ED8FC5A885FC166051A /* Pods-Yaariyan.debug.xcconfig */,
+				16F37B01A0E24077A4533EC4 /* Pods-Yaariyan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		501246221D0D8B6B00AD2457 /* Yaariyan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 501246351D0D8B6B00AD2457 /* Build configuration list for PBXNativeTarget "Yaariyan" */;
+			buildPhases = (
+				BE154DBA340A29DFF3707B18 /* Check Pods Manifest.lock */,
+				5012461F1D0D8B6B00AD2457 /* Sources */,
+				501246201D0D8B6B00AD2457 /* Frameworks */,
+				501246211D0D8B6B00AD2457 /* Resources */,
+				2F090B72964C43E0395A2BBD /* Embed Pods Frameworks */,
+				D05EBDC0966ED797369B09B5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yaariyan;
+			productName = Yaariyan;
+			productReference = 501246231D0D8B6B00AD2457 /* Yaariyan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5012461B1D0D8B6B00AD2457 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Rahul Tomar";
+				TargetAttributes = {
+					501246221D0D8B6B00AD2457 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5012461E1D0D8B6B00AD2457 /* Build configuration list for PBXProject "Yaariyan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5012461A1D0D8B6B00AD2457;
+			productRefGroup = 501246241D0D8B6B00AD2457 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				501246221D0D8B6B00AD2457 /* Yaariyan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		501246211D0D8B6B00AD2457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501246311D0D8B6B00AD2457 /* LaunchScreen.storyboard in Resources */,
+				50151A7E1D1338D200690A51 /* BTNavigationDropdownMenu.bundle in Resources */,
+				50151A6B1D13120C00690A51 /* loading.gif in Resources */,
+				50151A741D13348F00690A51 /* OverlayView.xib in Resources */,
+				5012462E1D0D8B6B00AD2457 /* Assets.xcassets in Resources */,
+				5012462C1D0D8B6B00AD2457 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F090B72964C43E0395A2BBD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yaariyan/Pods-Yaariyan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE154DBA340A29DFF3707B18 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D05EBDC0966ED797369B09B5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yaariyan/Pods-Yaariyan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5012461F1D0D8B6B00AD2457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50151A701D13347A00690A51 /* DraggableCardView.swift in Sources */,
+				5012463E1D0D932800AD2457 /* CircleMenuButton.swift in Sources */,
+				50151A781D13353400690A51 /* CustomOverlayView.swift in Sources */,
+				501246441D0D93CB00AD2457 /* CustomNavigationAnimationController.swift in Sources */,
+				50151A5D1D120ADA00690A51 /* YoutubeViewController.swift in Sources */,
+				50151A641D12A69100690A51 /* ClearCookiesCache.swift in Sources */,
+				50151A711D13347A00690A51 /* KolodaView.swift in Sources */,
+				50151A771D13353400690A51 /* CustomKoladaView.swift in Sources */,
+				50151A7A1D1336B500690A51 /* BoxOfficeViewController.swift in Sources */,
+				50151A581D11FA9E00690A51 /* MovieTableViewCell.swift in Sources */,
+				501246581D0DC58400AD2457 /* SweetAlert.swift in Sources */,
+				50151A691D13120100690A51 /* Gif.swift in Sources */,
+				5012463F1D0D932800AD2457 /* CircleMenuLoader.swift in Sources */,
+				5012463D1D0D932800AD2457 /* CircleMenu.swift in Sources */,
+				50151A661D130E1A00690A51 /* ReviewViewController.swift in Sources */,
+				50151A7F1D1338D200690A51 /* BTNavigationDropdownMenu.swift in Sources */,
+				501246511D0D9F6A00AD2457 /* RadioPlayer.swift in Sources */,
+				50151A5B1D1205C900690A51 /* TipInCellAnimator.swift in Sources */,
+				501246431D0D93CB00AD2457 /* CustomInteractionController.swift in Sources */,
+				50151A721D13347A00690A51 /* OverlayView.swift in Sources */,
+				5012464E1D0D9F3200AD2457 /* RadioViewController.swift in Sources */,
+				50151A561D11F81D00690A51 /* MovieTableViewController.swift in Sources */,
+				501246291D0D8B6B00AD2457 /* MainViewController.swift in Sources */,
+				501246471D0D948900AD2457 /* Reachability.swift in Sources */,
+				501246271D0D8B6B00AD2457 /* AppDelegate.swift in Sources */,
+				5012465A1D0E029200AD2457 /* MovieViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5012462A1D0D8B6B00AD2457 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5012462B1D0D8B6B00AD2457 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5012462F1D0D8B6B00AD2457 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				501246301D0D8B6B00AD2457 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		501246331D0D8B6B00AD2457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		501246341D0D8B6B00AD2457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		501246361D0D8B6B00AD2457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618E8ED8FC5A885FC166051A /* Pods-Yaariyan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Yaariyan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahultomar.BollywoodMasti;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Yaariyan/Yaariyan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		501246371D0D8B6B00AD2457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16F37B01A0E24077A4533EC4 /* Pods-Yaariyan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Yaariyan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahultomar.BollywoodMasti;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Yaariyan/Yaariyan-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5012461E1D0D8B6B00AD2457 /* Build configuration list for PBXProject "Yaariyan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				501246331D0D8B6B00AD2457 /* Debug */,
+				501246341D0D8B6B00AD2457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		501246351D0D8B6B00AD2457 /* Build configuration list for PBXNativeTarget "Yaariyan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				501246361D0D8B6B00AD2457 /* Debug */,
+				501246371D0D8B6B00AD2457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5012461B1D0D8B6B00AD2457 /* Project object */;
+}
