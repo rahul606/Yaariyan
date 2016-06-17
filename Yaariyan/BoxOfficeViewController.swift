@@ -18,9 +18,11 @@ class BoxOfficeViewController: UIViewController {
 
     @IBOutlet weak var koladaView: CustomKolodaView!
     
+    var imageArray: [NSString] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        search()
         let items = ["Top Rated Movies", "Top Grossed Movies", "Top Actors", "Top Actresses"]
         let menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items.first!, items: items)
         self.navigationItem.titleView = menuView
@@ -43,6 +45,30 @@ class BoxOfficeViewController: UIViewController {
     
     @IBAction func goHome(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    internal func search() {
+        
+        let url = NSURL(string: "https://api.cinemalytics.com/v1/analytics/TopMovies/?auth_token=ECF106431844CAF24373B15E1F181FCD")
+        let session = NSURLSession.sharedSession()
+        let task = session.downloadTaskWithURL(url!, completionHandler: {(url, response, error) in
+            
+            let data: NSData = NSData(contentsOfURL: url!)!
+            let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
+            for counter in 0...jsonArray.count-1 {
+                self.imageArray.append(jsonArray[counter]["PosterPath"] as! NSString)
+            }
+            if let error = error {
+                print("error = \(error)")
+            }
+            
+            if let response = response {
+                print("response = \(response)")
+            }
+            
+            self.koladaView.reloadData()
+        })
+        task.resume()
     }
     
     /*
@@ -96,7 +122,14 @@ extension BoxOfficeViewController: KolodaViewDataSource {
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        return UIImageView(image: UIImage(named: "cards_\(index + 1)"))
+        if self.imageArray.count > 0{
+            let a: Int = Int(index)
+            let imageUrl = NSURL(string: self.imageArray[a] as String)
+            let imageData = NSData(contentsOfURL: imageUrl!)
+            return UIImageView(image: UIImage(data: imageData!))
+        } else{
+            return UIImageView(image: UIImage(named: ""))
+        }
     }
     
     func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
