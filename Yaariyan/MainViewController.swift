@@ -75,7 +75,7 @@ class MainViewController: UIViewController, CircleMenuDelegate, UIViewController
             self.performSegueWithIdentifier("RadioView", sender: self)
         }
         if(atIndex == 2){
-            self.performSegueWithIdentifier("BoxOfficeView", sender: self)
+            self.performSegueWithIdentifier("TwitterCelebrityView", sender: self)
         }
         if(atIndex == 3){
             //self.performSegueWithIdentifier("SpotifyView", sender: self)

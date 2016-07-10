@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -91,45 +93,99 @@
                     <connections>
                         <segue destination="bFK-oy-rR5" kind="show" identifier="RadioView" id="AAR-NS-AQO"/>
                         <segue destination="Zjo-lq-K3p" kind="show" identifier="MovieView" id="Apz-MC-5dv"/>
-                        <segue destination="OcD-ng-DpO" kind="show" identifier="BoxOfficeView" id="qXX-ih-6n3"/>
+                        <segue destination="jlF-Kz-Yd3" kind="show" identifier="TwitterCelebrityView" id="mkm-iI-pa0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sou-Q8-nPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-484" y="271"/>
         </scene>
-        <!--Box Office View Controller-->
-        <scene sceneID="hcH-3F-ulv">
+        <!--Twitter Celebrity View Controller-->
+        <scene sceneID="YWU-eT-dSy">
             <objects>
-                <viewController id="OcD-ng-DpO" customClass="BoxOfficeViewController" customModule="Yaariyan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jlF-Kz-Yd3" customClass="TwitterCelebrityViewController" customModule="Yaariyan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HGN-aU-tZk"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qf8-J1-yK7"/>
+                        <viewControllerLayoutGuide type="top" id="W2P-Hq-lxf"/>
+                        <viewControllerLayoutGuide type="bottom" id="NkK-w3-tTr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DQr-09-eVa">
+                    <view key="view" contentMode="scaleToFill" id="8aw-zr-GxX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZl-G9-qel" customClass="KolodaView" customModule="Yaariyan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.97075939899999997" green="0.37393427229999998" blue="0.12105793300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oYO-eW-iSn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celebrity" id="TAY-er-H3P" customClass="TwitterCelebrityTableViewCell" customModule="Yaariyan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAY-er-H3P" id="dwQ-Iy-QO8">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcN-Kk-zXQ">
+                                                    <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="F9w-Dg-zVy"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-QV-Mlv">
+                                                    <rect key="frame" x="260" y="8" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="WdJ-M6-rfe"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cya-5p-Ceq">
+                                                    <rect key="frame" x="512" y="8" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="J1n-Am-Vfu"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sdf-QV-Mlv" firstAttribute="baseline" secondItem="ZcN-Kk-zXQ" secondAttribute="firstBaseline" id="FVh-L6-q14"/>
+                                                <constraint firstItem="ZcN-Kk-zXQ" firstAttribute="baseline" secondItem="sdf-QV-Mlv" secondAttribute="firstBaseline" id="GeW-xE-CcK"/>
+                                                <constraint firstItem="ZcN-Kk-zXQ" firstAttribute="top" secondItem="dwQ-Iy-QO8" secondAttribute="topMargin" id="GvQ-Hv-03r"/>
+                                                <constraint firstItem="sdf-QV-Mlv" firstAttribute="baseline" secondItem="cya-5p-Ceq" secondAttribute="firstBaseline" id="Ktn-uT-aNO"/>
+                                                <constraint firstItem="sdf-QV-Mlv" firstAttribute="baseline" secondItem="cya-5p-Ceq" secondAttribute="baseline" id="TPZ-p4-PWq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZcN-Kk-zXQ" secondAttribute="bottom" constant="3" id="dzC-jY-ttW"/>
+                                                <constraint firstItem="ZcN-Kk-zXQ" firstAttribute="top" secondItem="sdf-QV-Mlv" secondAttribute="top" id="lxe-dx-MZr"/>
+                                                <constraint firstItem="sdf-QV-Mlv" firstAttribute="top" secondItem="cya-5p-Ceq" secondAttribute="top" id="ptV-qI-Zqn"/>
+                                                <constraint firstItem="sdf-QV-Mlv" firstAttribute="centerX" secondItem="dwQ-Iy-QO8" secondAttribute="centerX" id="wcq-lV-LNa"/>
+                                                <constraint firstItem="ZcN-Kk-zXQ" firstAttribute="leading" secondItem="dwQ-Iy-QO8" secondAttribute="leadingMargin" id="ycL-Qy-wM8"/>
+                                                <constraint firstItem="cya-5p-Ceq" firstAttribute="trailing" secondItem="dwQ-Iy-QO8" secondAttribute="trailingMargin" id="yco-i4-2x0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="centreBtn" destination="sdf-QV-Mlv" id="KPB-d6-Gyj"/>
+                                            <outlet property="leftBtn" destination="ZcN-Kk-zXQ" id="emd-y4-g6t"/>
+                                            <outlet property="rightBtn" destination="cya-5p-Ceq" id="5pr-aB-vzf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jlF-Kz-Yd3" id="VTI-QN-Zee"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97075939899999997" green="0.37393427229999998" blue="0.12105793300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yZl-G9-qel" firstAttribute="bottom" secondItem="Qf8-J1-yK7" secondAttribute="top" id="6Ig-6e-UG6"/>
-                            <constraint firstAttribute="trailing" secondItem="yZl-G9-qel" secondAttribute="trailing" id="UjT-0C-zgJ"/>
-                            <constraint firstItem="yZl-G9-qel" firstAttribute="top" secondItem="HGN-aU-tZk" secondAttribute="bottom" id="dbQ-EI-4Zr"/>
-                            <constraint firstItem="yZl-G9-qel" firstAttribute="leading" secondItem="DQr-09-eVa" secondAttribute="leading" id="hC4-zO-KEa"/>
+                            <constraint firstAttribute="trailing" secondItem="oYO-eW-iSn" secondAttribute="trailing" id="1hI-nv-716"/>
+                            <constraint firstItem="oYO-eW-iSn" firstAttribute="top" secondItem="8aw-zr-GxX" secondAttribute="top" id="EiW-Zg-Ivy"/>
+                            <constraint firstItem="oYO-eW-iSn" firstAttribute="leading" secondItem="8aw-zr-GxX" secondAttribute="leading" id="Rvo-K2-dVv"/>
+                            <constraint firstItem="NkK-w3-tTr" firstAttribute="top" secondItem="oYO-eW-iSn" secondAttribute="bottom" constant="64" id="z9X-2y-Fp0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="koladaView" destination="yZl-G9-qel" id="MNb-IB-pbv"/>
+                        <outlet property="celebrityTableView" destination="oYO-eW-iSn" id="6dA-Mt-QYo"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Bn-bq-n2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRx-lp-QZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-484" y="942"/>
+            <point key="canvasLocation" x="-484" y="973"/>
         </scene>
         <!--Movie View Controller-->
         <scene sceneID="cjo-tC-IPj">

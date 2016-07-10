@@ -34,15 +34,8 @@
 		50151A661D130E1A00690A51 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A651D130E1A00690A51 /* ReviewViewController.swift */; };
 		50151A691D13120100690A51 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A681D13120100690A51 /* Gif.swift */; };
 		50151A6B1D13120C00690A51 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50151A6A1D13120C00690A51 /* loading.gif */; };
-		50151A701D13347A00690A51 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6D1D13347A00690A51 /* DraggableCardView.swift */; };
-		50151A711D13347A00690A51 /* KolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6E1D13347A00690A51 /* KolodaView.swift */; };
-		50151A721D13347A00690A51 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A6F1D13347A00690A51 /* OverlayView.swift */; };
-		50151A741D13348F00690A51 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50151A731D13348F00690A51 /* OverlayView.xib */; };
-		50151A771D13353400690A51 /* CustomKoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A751D13353400690A51 /* CustomKoladaView.swift */; };
-		50151A781D13353400690A51 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A761D13353400690A51 /* CustomOverlayView.swift */; };
-		50151A7A1D1336B500690A51 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A791D1336B500690A51 /* BoxOfficeViewController.swift */; };
-		50151A7E1D1338D200690A51 /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */; };
-		50151A7F1D1338D200690A51 /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */; };
+		50E015081D32D29B00FE8CDC /* TwitterCelebrityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E015071D32D29B00FE8CDC /* TwitterCelebrityViewController.swift */; };
+		50E0150A1D32D49700FE8CDC /* TwitterCelebrityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E015091D32D49700FE8CDC /* TwitterCelebrityTableViewCell.swift */; };
 		C6C30572A095577627121FA2 /* libPods-Yaariyan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B981AF1E2F0B20E25D6E616 /* libPods-Yaariyan.a */; };
 /* End PBXBuildFile section */
 
@@ -79,15 +72,8 @@
 		50151A651D130E1A00690A51 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		50151A681D13120100690A51 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		50151A6A1D13120C00690A51 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
-		50151A6D1D13347A00690A51 /* DraggableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
-		50151A6E1D13347A00690A51 /* KolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KolodaView.swift; sourceTree = "<group>"; };
-		50151A6F1D13347A00690A51 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
-		50151A731D13348F00690A51 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
-		50151A751D13353400690A51 /* CustomKoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKoladaView.swift; sourceTree = "<group>"; };
-		50151A761D13353400690A51 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
-		50151A791D1336B500690A51 /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
-		50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
-		50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
+		50E015071D32D29B00FE8CDC /* TwitterCelebrityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterCelebrityViewController.swift; sourceTree = "<group>"; };
+		50E015091D32D49700FE8CDC /* TwitterCelebrityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterCelebrityTableViewCell.swift; sourceTree = "<group>"; };
 		618E8ED8FC5A885FC166051A /* Pods-Yaariyan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yaariyan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yaariyan/Pods-Yaariyan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +128,8 @@
 				50151A5C1D120ADA00690A51 /* YoutubeViewController.swift */,
 				50151A5E1D12A4BD00690A51 /* Yaariyan-Bridging-Header.h */,
 				50151A651D130E1A00690A51 /* ReviewViewController.swift */,
-				50151A791D1336B500690A51 /* BoxOfficeViewController.swift */,
+				50E015071D32D29B00FE8CDC /* TwitterCelebrityViewController.swift */,
+				50E015091D32D49700FE8CDC /* TwitterCelebrityTableViewCell.swift */,
 			);
 			path = Yaariyan;
 			sourceTree = "<group>";
@@ -150,8 +137,6 @@
 		501246381D0D930700AD2457 /* SupportingClasses */ = {
 			isa = PBXGroup;
 			children = (
-				50151A7B1D1338BF00690A51 /* DropDownAnimation */,
-				50151A6C1D13344400690A51 /* CardSwap */,
 				50151A671D1311E400690A51 /* SwiftGif */,
 				50151A621D12A68300690A51 /* ClearCookies */,
 				50151A591D1205AA00690A51 /* TipInCellAnimator */,
@@ -244,28 +229,6 @@
 			name = SwiftGif;
 			sourceTree = "<group>";
 		};
-		50151A6C1D13344400690A51 /* CardSwap */ = {
-			isa = PBXGroup;
-			children = (
-				50151A751D13353400690A51 /* CustomKoladaView.swift */,
-				50151A761D13353400690A51 /* CustomOverlayView.swift */,
-				50151A6D1D13347A00690A51 /* DraggableCardView.swift */,
-				50151A6E1D13347A00690A51 /* KolodaView.swift */,
-				50151A6F1D13347A00690A51 /* OverlayView.swift */,
-				50151A731D13348F00690A51 /* OverlayView.xib */,
-			);
-			name = CardSwap;
-			sourceTree = "<group>";
-		};
-		50151A7B1D1338BF00690A51 /* DropDownAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				50151A7C1D1338D200690A51 /* BTNavigationDropdownMenu.bundle */,
-				50151A7D1D1338D200690A51 /* BTNavigationDropdownMenu.swift */,
-			);
-			name = DropDownAnimation;
-			sourceTree = "<group>";
-		};
 		FA018B26700446C14BE8DDA1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +273,7 @@
 				TargetAttributes = {
 					501246221D0D8B6B00AD2457 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = DGL5UB4ZR5;
 					};
 				};
 			};
@@ -337,9 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501246311D0D8B6B00AD2457 /* LaunchScreen.storyboard in Resources */,
-				50151A7E1D1338D200690A51 /* BTNavigationDropdownMenu.bundle in Resources */,
 				50151A6B1D13120C00690A51 /* loading.gif in Resources */,
-				50151A741D13348F00690A51 /* OverlayView.xib in Resources */,
 				5012462E1D0D8B6B00AD2457 /* Assets.xcassets in Resources */,
 				5012462C1D0D8B6B00AD2457 /* Main.storyboard in Resources */,
 			);
@@ -400,29 +362,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50151A701D13347A00690A51 /* DraggableCardView.swift in Sources */,
 				5012463E1D0D932800AD2457 /* CircleMenuButton.swift in Sources */,
-				50151A781D13353400690A51 /* CustomOverlayView.swift in Sources */,
 				501246441D0D93CB00AD2457 /* CustomNavigationAnimationController.swift in Sources */,
 				50151A5D1D120ADA00690A51 /* YoutubeViewController.swift in Sources */,
 				50151A641D12A69100690A51 /* ClearCookiesCache.swift in Sources */,
-				50151A711D13347A00690A51 /* KolodaView.swift in Sources */,
-				50151A771D13353400690A51 /* CustomKoladaView.swift in Sources */,
-				50151A7A1D1336B500690A51 /* BoxOfficeViewController.swift in Sources */,
 				50151A581D11FA9E00690A51 /* MovieTableViewCell.swift in Sources */,
 				501246581D0DC58400AD2457 /* SweetAlert.swift in Sources */,
+				50E0150A1D32D49700FE8CDC /* TwitterCelebrityTableViewCell.swift in Sources */,
 				50151A691D13120100690A51 /* Gif.swift in Sources */,
 				5012463F1D0D932800AD2457 /* CircleMenuLoader.swift in Sources */,
 				5012463D1D0D932800AD2457 /* CircleMenu.swift in Sources */,
 				50151A661D130E1A00690A51 /* ReviewViewController.swift in Sources */,
-				50151A7F1D1338D200690A51 /* BTNavigationDropdownMenu.swift in Sources */,
 				501246511D0D9F6A00AD2457 /* RadioPlayer.swift in Sources */,
 				50151A5B1D1205C900690A51 /* TipInCellAnimator.swift in Sources */,
 				501246431D0D93CB00AD2457 /* CustomInteractionController.swift in Sources */,
-				50151A721D13347A00690A51 /* OverlayView.swift in Sources */,
 				5012464E1D0D9F3200AD2457 /* RadioViewController.swift in Sources */,
 				50151A561D11F81D00690A51 /* MovieTableViewController.swift in Sources */,
 				501246291D0D8B6B00AD2457 /* MainViewController.swift in Sources */,
+				50E015081D32D29B00FE8CDC /* TwitterCelebrityViewController.swift in Sources */,
 				501246471D0D948900AD2457 /* Reachability.swift in Sources */,
 				501246271D0D8B6B00AD2457 /* AppDelegate.swift in Sources */,
 				5012465A1D0E029200AD2457 /* MovieViewController.swift in Sources */,
@@ -540,10 +497,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yaariyan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rahultomar.BollywoodMasti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Yaariyan/Yaariyan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -555,10 +515,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yaariyan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rahultomar.BollywoodMasti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Yaariyan/Yaariyan-Bridging-Header.h";
 			};
 			name = Release;
