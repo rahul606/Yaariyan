@@ -18,22 +18,22 @@ class YoutubeViewController: UIViewController, YTPlayerViewDelegate  {
         super.viewDidLoad()
         self.playerView.delegate = self
         ClearCookiesCache.clearCacheAndCookies()
-        self.playerView.loadWithVideoId(videoId as String)
+        self.playerView.load(withVideoId: videoId as String)
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         ClearCookiesCache.clearCacheAndCookies()
     }
     
-    func playerView(playerView: YTPlayerView, didChangeToState state: YTPlayerState) {
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
         switch (state){
-        case YTPlayerState.Playing:
+        case YTPlayerState.playing:
             break
-        case YTPlayerState.Paused:
+        case YTPlayerState.paused:
             break
         default:
             break
@@ -41,13 +41,13 @@ class YoutubeViewController: UIViewController, YTPlayerViewDelegate  {
     }
     //MARK: Delegate method
     
-    func playerView(playerView: YTPlayerView, didChangeToQuality quality: YTPlaybackQuality) {
+    func playerView(_ playerView: YTPlayerView, didChangeTo quality: YTPlaybackQuality) {
     }
     
-    func playerView(playerView: YTPlayerView, receivedError error: YTPlayerError) {
+    func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
     }
     
-    func playerViewDidBecomeReady(playerView: YTPlayerView) {
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         self.playerView.playVideo()
     }
     
@@ -57,8 +57,8 @@ class YoutubeViewController: UIViewController, YTPlayerViewDelegate  {
     }
     
     
-    @IBAction func goHome(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func goHome(_ sender: UIBarButtonItem) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     /*

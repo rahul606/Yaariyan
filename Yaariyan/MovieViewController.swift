@@ -29,8 +29,8 @@ class MovieViewController: UIViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let mtVc = segue.destinationViewController as! MovieTableViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mtVc = segue.destination as! MovieTableViewController
         if segue.identifier == "PickOfTheWeek" {
             mtVc.whichCellPressed = 0
         }
@@ -42,10 +42,10 @@ class MovieViewController: UIViewController {
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if Reachability.isConnectedToNetwork() == false {
             let alertController = Reachability.showAlert()
-            presentViewController(alertController, animated: true, completion: nil);
+            present(alertController, animated: true, completion: nil);
             return false
         } else {
             return true

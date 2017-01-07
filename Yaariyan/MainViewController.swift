@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static func color(red: Int, green: Int, blue: Int, alpha: Float) -> UIColor {
+    static func color(_ red: Int, green: Int, blue: Int, alpha: Float) -> UIColor {
         return UIColor(
             colorLiteralRed: Float(1.0) / Float(255.0) * Float(red),
             green: Float(1.0) / Float(255.0) * Float(green),
@@ -33,13 +33,13 @@ class MainViewController: UIViewController, CircleMenuDelegate, UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         self.navigationController?.navigationBar.barTintColor=UIColor.color(182, green: 193, blue: 45, alpha: 1)
         navigationController?.delegate = self
         
         if Reachability.isConnectedToNetwork() == false {
             let alertController = Reachability.showAlert()
-            presentViewController(alertController, animated: true, completion: nil);
+            present(alertController, animated: true, completion: nil);
         }
         
         
@@ -53,49 +53,49 @@ class MainViewController: UIViewController, CircleMenuDelegate, UIViewController
     
     // MARK: <CircleMenuDelegate>
     
-    func circleMenu(circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int) {
+    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: CircleMenuButton, atIndex: Int) {
         button.backgroundColor = items[atIndex].color
-        button.setImage(UIImage(imageLiteral: items[atIndex].icon), forState: .Normal)
+        button.setImage(UIImage(imageLiteralResourceName: items[atIndex].icon), for: UIControlState())
         
         // set highlited image
-        let highlightedImage  = UIImage(imageLiteral: items[atIndex].icon).imageWithRenderingMode(.AlwaysTemplate)
-        button.setImage(highlightedImage, forState: .Highlighted)
+        let highlightedImage  = UIImage(imageLiteralResourceName: items[atIndex].icon).withRenderingMode(.alwaysTemplate)
+        button.setImage(highlightedImage, for: .highlighted)
         button.tintColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
     }
     
-    func circleMenu(circleMenu: CircleMenu, buttonWillSelected button: CircleMenuButton, atIndex: Int) {
+    func circleMenu(_ circleMenu: CircleMenu, buttonWillSelected button: CircleMenuButton, atIndex: Int) {
         print("button will selected: \(atIndex)")
     }
     
-    func circleMenu(circleMenu: CircleMenu, buttonDidSelected button: CircleMenuButton, atIndex: Int) {
+    func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: CircleMenuButton, atIndex: Int) {
         if(atIndex == 0){
             //self.performSegueWithIdentifier("FindingFanny", sender: self)
         }
         if(atIndex == 1){
-            self.performSegueWithIdentifier("RadioView", sender: self)
+            self.performSegue(withIdentifier: "RadioView", sender: self)
         }
         if(atIndex == 2){
-            self.performSegueWithIdentifier("TwitterCelebrityView", sender: self)
+            //self.performSegue(withIdentifier: "TwitterCelebrityView", sender: self)
         }
         if(atIndex == 3){
             //self.performSegueWithIdentifier("SpotifyView", sender: self)
         }
         if(atIndex == 4){
-            self.performSegueWithIdentifier("MovieView", sender: self)
+            self.performSegue(withIdentifier: "MovieView", sender: self)
         }
         
         print("button did selected: \(atIndex)")
     }
     
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == .Push {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
             customInteractionController.attachToViewController(toVC)
         }
-        customNavigationAnimationController.reverse = operation == .Pop
+        customNavigationAnimationController.reverse = operation == .pop
         return customNavigationAnimationController
     }
     
-    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return customInteractionController.transitionInProgress ? customInteractionController : nil
     }
 }

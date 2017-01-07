@@ -14,15 +14,15 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var totalRowCount: NSInteger!
     var jsonArray: NSArray!
-    var preventAnimation: Set<NSIndexPath>!
+    var preventAnimation: Set<IndexPath>!
     var whichCellPressed: NSInteger!
-    var url: NSURL!
-    var imageCache: NSCache!
+    var url: URL!
+    var imageCache: NSCache<AnyObject, AnyObject>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         totalRowCount = NSInteger()
-        self.preventAnimation = Set<NSIndexPath>()
+        self.preventAnimation = Set<IndexPath>()
         imageCache = NSCache()
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 300
@@ -33,21 +33,21 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
     internal func searchThisWeekMovies() {
         
         if(whichCellPressed == 0) {
-            url = NSURL(string: "https://api.cinemalytics.com/v1/movie/releasedthisweek?auth_token=ECF106431844CAF24373B15E1F181FCD")
+            url = URL(string: "http://api.cinemalytics.in/v2/movie/releasedthisweek?auth_token=ECF106431844CAF24373B15E1F181FCD")
         }
         if(whichCellPressed == 1) {
-            url = NSURL(string: "https://api.cinemalytics.com/v1/movie/nextchange?auth_token=ECF106431844CAF24373B15E1F181FCD")
+            url = URL(string: "http://api.cinemalytics.in/v2/movie/latest-trailers/?auth_token=ECF106431844CAF24373B15E1F181FCD")
         }
         if(whichCellPressed == 2) {
-            url = NSURL(string: "https://api.cinemalytics.com/v1/movie/upcoming?auth_token=ECF106431844CAF24373B15E1F181FCD")
+            url = URL(string: "http://api.cinemalytics.in/v2/movie/upcoming?auth_token=ECF106431844CAF24373B15E1F181FCD")
         }
         
-        let session = NSURLSession.sharedSession()
-        let task = session.downloadTaskWithURL(url!, completionHandler: {(url, response, error) in
+        let session = URLSession.shared
+        let task = session.downloadTask(with: url!, completionHandler: {(url, response, error) in
             
-            let data: NSData = NSData(contentsOfURL: url!)!
-            let tempJsonArray = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
-            self.jsonArray = tempJsonArray.reverse()
+            let data: Data = try! Data(contentsOf: url!)
+            let tempJsonArray = (try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSArray
+            self.jsonArray = tempJsonArray.reversed() as NSArray!
             self.totalRowCount = self.jsonArray.count
             if let error = error {
                 print("error = \(error)")
@@ -56,7 +56,7 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
             if let response = response {
                 print("response = \(response)")
             }
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 self.tableView.reloadData()
             })
         })
@@ -68,68 +68,68 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return totalRowCount
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Card", forIndexPath: indexPath) as! MovieTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Card", for: indexPath) as! MovieTableViewCell
         
-        cell.reviewButton.hidden = true
+        cell.reviewButton.isHidden = true
         if whichCellPressed < 1 {
-            cell.reviewButton.hidden = false
+            cell.reviewButton.isHidden = false
         }
-        let posterUrlStr: NSString = self.jsonArray[indexPath.row]["PosterPath"] as! NSString
-        let movieNameStr = self.jsonArray[indexPath.row]["Title"] as! String
-        var movieDescriptionStr = self.jsonArray[indexPath.row]["Description"] as! String
-        let movieGenre = self.jsonArray[indexPath.row]["Genre"] as! String
-        let movieCensorRating = self.jsonArray[indexPath.row]["CensorRating"] as! String
-        let movieReleaseDate = self.jsonArray[indexPath.row]["ReleaseDate"] as! String
-        let youtubeLink = self.jsonArray[indexPath.row]["TrailerLink"] as! String
+        let posterUrlStr = (self.jsonArray[indexPath.row] as? NSDictionary)?["PosterPath"] as! String
+        let movieNameStr = (self.jsonArray[indexPath.row] as? NSDictionary)?["Title"] as! String
+        var movieDescriptionStr = (self.jsonArray[indexPath.row] as? NSDictionary)?["Description"] as! String
+        let movieGenre = (self.jsonArray[indexPath.row] as? NSDictionary)?["Genre"] as! String
+        let movieCensorRating = (self.jsonArray[indexPath.row] as? NSDictionary)?["CensorRating"] as! String
+        let movieReleaseDate = (self.jsonArray[indexPath.row] as? NSDictionary)?["ReleaseDate"] as! String
+        let youtubeLink = (self.jsonArray[indexPath.row] as? NSDictionary)?["TrailerLink"] as! String
         
-        let cellImageFromUrl = imageCache.objectForKey(posterUrlStr) as? UIImage
+        let cellImageFromUrl = imageCache.object(forKey: posterUrlStr as AnyObject) as? UIImage
         if cellImageFromUrl == nil {
             cell.movieName.text = movieNameStr
             cell.movieImage.image = UIImage(named: "MovieLounge")
             cell.descriptionWindowTitle = movieNameStr
             
-            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init) as NSArray
-            if youtubeLinkArr.count > 1 {
-                cell.youtubeButton.enabled = true
+            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init)
+            if (youtubeLinkArr.count) > 1 {
+                cell.youtubeButton.isEnabled = true
                 cell.onYoutubeButtonTapped = {
-                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("PlayerView") as! YoutubeViewController
-                    playerViewController.videoId = youtubeLinkArr[1] as! String
+                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "PlayerView") as! YoutubeViewController
+                    playerViewController.videoId = youtubeLinkArr[1] as NSString! 
                     self.navigationController?.pushViewController(playerViewController, animated: true)
                 }
             }
             else {
-                cell.youtubeButton.enabled = false
+                cell.youtubeButton.isEnabled = false
             }
             let updatedMovieNameStr = removeSpecialCharsFromString(movieNameStr)
-            let reviewUrlStr = "http://thereviewmonk.com/movie/" + updatedMovieNameStr.stringByReplacingOccurrencesOfString(" ", withString: "-") + "/reviews/"
+            let reviewUrlStr = "http://thereviewmonk.com/movie/" + updatedMovieNameStr.replacingOccurrences(of: " ", with: "-") + "/reviews/"
             cell.onReviewButtonTapped = {
-                let reviewViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("ReviewView") as! ReviewViewController
-                reviewViewController.reviewUrlStr = reviewUrlStr
+                let reviewViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "ReviewView") as! ReviewViewController
+                reviewViewController.reviewUrlStr = reviewUrlStr as NSString! as NSString!
                 self.navigationController?.pushViewController(reviewViewController, animated: true)
             }
             cell.descriptionWindowDetails = movieDescriptionStr
             cell.imageLoadingActivity.startAnimating()
-            let session = NSURLSession.sharedSession()
-            let task = session.downloadTaskWithURL(url!, completionHandler: {(url, response, error) in
+            let session = URLSession.shared
+            let task = session.downloadTask(with: url!, completionHandler: {(url, response, error) in
                 
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                    var imageUrl: NSURL!
+                DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
+                    var imageUrl: URL!
                     var image: UIImage!
-                    if (posterUrlStr != "" && (posterUrlStr.rangeOfString(".png").location != NSNotFound || posterUrlStr.rangeOfString(".jpg").location != NSNotFound)) {
-                        imageUrl = NSURL(string: posterUrlStr as String)
-                        let imageData = NSData(contentsOfURL: imageUrl!)
+                    if (posterUrlStr != "" && (posterUrlStr.range(of: ".png") != nil || posterUrlStr.range(of: ".jpg") != nil)) {
+                        imageUrl = URL(string: posterUrlStr as String)
+                        let imageData = try? Data(contentsOf: imageUrl!)
                         image = UIImage(data: imageData!)
                     }
                     else {
@@ -140,8 +140,8 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
                         NSLog("error = \(error)", "Error while downloading image url")
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), {
-                        let updateCell = self.tableView.cellForRowAtIndexPath(indexPath) as? MovieTableViewCell
+                    DispatchQueue.main.async(execute: {
+                        let updateCell = self.tableView.cellForRow(at: indexPath) as? MovieTableViewCell
                         if((updateCell) != nil){
                             updateCell?.imageLoadingActivity.stopAnimating()
                             updateCell?.imageLoadingActivity.hidesWhenStopped
@@ -149,26 +149,27 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
                             updateCell!.movieName.text = movieNameStr
                             updateCell!.movieImage.image = cellImageFromUrl
                             updateCell!.descriptionWindowTitle = movieNameStr
-                            let fullMovieDescription = "Release Date : " + movieReleaseDate + "\r\n" +
-                                "Genre : " + movieGenre + "\r\n" +
-                                "Censor Rating : " + movieCensorRating + "\r\n" +
-                            movieDescriptionStr
+                            let lineBreak = "\r\n"
+                            var fullMovieDescription = "Release Date : " + movieReleaseDate + lineBreak
+                            fullMovieDescription += "Genre : " + movieGenre + lineBreak
+                            fullMovieDescription += "Censor Rating : " + movieCensorRating + lineBreak
+                            fullMovieDescription += movieDescriptionStr
                             
                             movieDescriptionStr = fullMovieDescription
-                            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init) as NSArray
-                            if youtubeLinkArr.count > 1 {
-                                updateCell!.youtubeButton.enabled = true
+                            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init)
+                            if (youtubeLinkArr.count) > 1 {
+                                updateCell!.youtubeButton.isEnabled = true
                                 updateCell!.onYoutubeButtonTapped = {
-                                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("PlayerView") as! YoutubeViewController
-                                    playerViewController.videoId = youtubeLinkArr[1] as! String
+                                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "PlayerView") as! YoutubeViewController
+                                    playerViewController.videoId = youtubeLinkArr[1] as NSString!
                                     self.navigationController?.pushViewController(playerViewController, animated: true)
                                 }
                             }
                             else {
-                                updateCell!.youtubeButton.enabled = false
+                                updateCell!.youtubeButton.isEnabled = false
                             }
                             updateCell!.descriptionWindowDetails = movieDescriptionStr
-                            self.imageCache.setObject(cellImageFromUrl!, forKey: posterUrlStr)
+                            self.imageCache.setObject(cellImageFromUrl!, forKey: posterUrlStr as AnyObject)
                         }
                     })
                 })
@@ -179,31 +180,32 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.movieName.text = movieNameStr
             cell.movieImage.image = cellImageFromUrl
             cell.descriptionWindowTitle = movieNameStr
-            let fullMovieDescription = "Release Date : " + movieReleaseDate + "\r\n" +
-                "Genre : " + movieGenre + "\r\n" +
-                "Censor Rating : " + movieCensorRating + "\r\n" +
-            movieDescriptionStr
+            let lineBreak = "\r\n"
+            var fullMovieDescription = "Release Date : " + movieReleaseDate + lineBreak
+            fullMovieDescription += "Genre : " + movieGenre + lineBreak
+            fullMovieDescription += "Censor Rating : " + movieCensorRating + lineBreak
+            fullMovieDescription += movieDescriptionStr
             
             movieDescriptionStr = fullMovieDescription
-            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init) as NSArray
-            if youtubeLinkArr.count > 1 {
-                cell.youtubeButton.enabled = true
+            let youtubeLinkArr = youtubeLink.characters.split{$0 == "="}.map(String.init)
+            if (youtubeLinkArr.count) > 1 {
+                cell.youtubeButton.isEnabled = true
                 cell.onYoutubeButtonTapped = {
-                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("PlayerView") as! YoutubeViewController
-                    playerViewController.videoId = youtubeLinkArr[1] as! String
+                    let playerViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "PlayerView") as! YoutubeViewController
+                    playerViewController.videoId = youtubeLinkArr[1] as NSString!
                     self.navigationController?.pushViewController(playerViewController, animated: true)
                 }
             }
             else {
-                cell.youtubeButton.enabled = false
+                cell.youtubeButton.isEnabled = false
             }
             cell.descriptionWindowDetails = movieDescriptionStr
             
             let updatedMovieNameStr = removeSpecialCharsFromString(movieNameStr)
-            let reviewUrlStr = "http://thereviewmonk.com/movie/" + updatedMovieNameStr.stringByReplacingOccurrencesOfString(" ", withString: "-") + "/reviews/"
+            let reviewUrlStr = "http://thereviewmonk.com/movie/" + updatedMovieNameStr.replacingOccurrences(of: " ", with: "-") + "/reviews/"
             cell.onReviewButtonTapped = {
-                let reviewViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("ReviewView") as! ReviewViewController
-                reviewViewController.reviewUrlStr = reviewUrlStr
+                let reviewViewController = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "ReviewView") as! ReviewViewController
+                reviewViewController.reviewUrlStr = reviewUrlStr as NSString!
                 self.navigationController?.pushViewController(reviewViewController, animated: true)
             }
         }
@@ -211,22 +213,22 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if !preventAnimation.contains(indexPath) {
             preventAnimation.insert(indexPath)
             TipInCellAnimator.animate(cell)
         }
     }
     
-    func removeSpecialCharsFromString(text: String) -> String {
+    func removeSpecialCharsFromString(_ text: String) -> String {
         let okayChars : Set<Character> =
             Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890".characters)
         return String(text.characters.filter {okayChars.contains($0) })
     }
     
     
-    @IBAction func goHome(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func goHome(_ sender: UIBarButtonItem) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     

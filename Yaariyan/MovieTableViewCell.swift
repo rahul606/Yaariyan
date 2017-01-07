@@ -28,23 +28,23 @@ class MovieTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    @IBAction func showMovieDescription(sender: UIButton) {
-        SweetAlert().showAlert(descriptionWindowTitle, subTitle: descriptionWindowDetails, style: AlertStyle.None, buttonColor: UIColor.color(89, green: 188, blue: 184, alpha: 1))
+    @IBAction func showMovieDescription(_ sender: UIButton) {
+        SweetAlert().showAlert(descriptionWindowTitle, subTitle: descriptionWindowDetails, style: AlertStyle.none, buttonColor: UIColor.color(89, green: 188, blue: 184, alpha: 1))
     }
     
-    @IBAction func startYoutube(sender: UIButton) {
+    @IBAction func startYoutube(_ sender: UIButton) {
         if let onYoutubeButtonTapped = self.onYoutubeButtonTapped {
             onYoutubeButtonTapped()
         }
     }
     
-    @IBAction func showMovieReview(sender: UIButton) {
+    @IBAction func showMovieReview(_ sender: UIButton) {
         if let onReviewButtonTapped = self.onReviewButtonTapped {
             onReviewButtonTapped()
         }

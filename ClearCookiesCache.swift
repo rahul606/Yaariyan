@@ -10,10 +10,10 @@ import Foundation
 
 class ClearCookiesCache {
     static func clearCacheAndCookies() {
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
-        NSURLCache.sharedURLCache().diskCapacity = 0
-        NSURLCache.sharedURLCache().memoryCapacity = 0
-        let cookieJar = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
+        let cookieJar = HTTPCookieStorage.shared
         for cookie in cookieJar.cookies! {
             cookieJar.deleteCookie(cookie)
         }

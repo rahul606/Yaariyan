@@ -24,19 +24,19 @@ class TwitterCelebrityViewController: UIViewController, UITableViewDelegate, UIT
     }
     
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("celebrity", forIndexPath: indexPath) as! TwitterCelebrityTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celebrity", for: indexPath) as! TwitterCelebrityTableViewCell
         cell.leftBtn.layer.cornerRadius = 0.5 * cell.leftBtn.bounds.size.width
         cell.centreBtn.layer.cornerRadius = 0.5 * cell.centreBtn.bounds.size.width
         cell.rightBtn.layer.cornerRadius = 0.5 * cell.rightBtn.bounds.size.width
@@ -44,7 +44,7 @@ class TwitterCelebrityViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
     }
 

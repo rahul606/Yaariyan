@@ -21,15 +21,15 @@ class ReviewViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         reviewWebPage.delegate = self
         ClearCookiesCache.clearCacheAndCookies()
-        let url = NSURL(string: reviewUrlStr as String)
-        let request = NSURLRequest(URL: url!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData,
+        let url = URL(string: reviewUrlStr as String)
+        let request = URLRequest(url: url!, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData,
                                    timeoutInterval: 10.0)
-        forwardBtn.enabled = false
-        backBtn.enabled = false
+        forwardBtn.isEnabled = false
+        backBtn.isEnabled = false
         reviewWebPage.loadRequest(request)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         ClearCookiesCache.clearCacheAndCookies()
     }
     
@@ -38,38 +38,38 @@ class ReviewViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidStartLoad(_ webView: UIWebView) {
         loadingImage.image = UIImage.gifWithName("loading")
-        loadingImage.hidden = false
+        loadingImage.isHidden = false
         if reviewWebPage.canGoBack {
-            backBtn.enabled = true
+            backBtn.isEnabled = true
         } else {
-            backBtn.enabled = false
+            backBtn.isEnabled = false
         }
         
         if reviewWebPage.canGoForward {
-            forwardBtn.enabled = true
+            forwardBtn.isEnabled = true
         } else {
-            forwardBtn.enabled = false
+            forwardBtn.isEnabled = false
         }
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         loadingImage.image = nil
-        loadingImage.hidden = true
+        loadingImage.isHidden = true
     }
     
     
-    @IBAction func goHome(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func goHome(_ sender: UIBarButtonItem) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     
-    @IBAction func goForward(sender: UIBarButtonItem) {
+    @IBAction func goForward(_ sender: UIBarButtonItem) {
         reviewWebPage.goForward()
     }
     
-    @IBAction func goBack(sender: UIBarButtonItem) {
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
         reviewWebPage.goBack()
     }
     /*
